@@ -19,32 +19,11 @@ A simple command-line Python application to help you track your income and expen
 
 ## 📦 Setup
 
-1. Clone this repository:
+Clone this repository:
 
 ```bash
 git clone https://github.com/roeechen96/finance-tracker.git
 cd finance-tracker
-```
-
-2. (Optional) Create and activate a virtual environment:
-
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-3. Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-## 🧪 Running Tests
-
-To run the test suite using `pytest`:
-
-```bash
-pytest
 ```
 
 ## 🖥️ Usage
