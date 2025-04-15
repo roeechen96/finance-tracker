@@ -22,7 +22,7 @@ A simple command-line Python application to help you track your income and expen
 1. Clone this repository:
 
 ```bash
-git clone https://github.com/yourusername/finance-tracker.git
+git clone https://github.com/roeechen96/finance-tracker.git
 cd finance-tracker
 ```
 
@@ -68,16 +68,4 @@ All transactions are stored in `finance_data.csv` with the following fields:
 |------------|--------|----------|-------------|
 | 15-04-2025 | 200.0  | Income   | Freelance    |
 
-## ✅ To-Do
 
-- [ ] Monthly summary report
-- [ ] Export PDF reports
-- [ ] GUI version
-
-## 🧑‍💻 Contributing
-
-Pull requests are welcome! Feel free to open issues or suggest features.
-
-## 📄 License
-
-This project is licensed under the MIT License.
