@@ -4,6 +4,7 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 import pandas as pd
 from data_entry import get_amount, get_category, get_date, get_description
+from pandas import DataFrame
 
 
 class CSV:
@@ -12,7 +13,7 @@ class CSV:
     FORMAT = "%d-%m-%Y"
 
     @classmethod
-    def initialize_csv(cls):
+    def initialize_csv(cls) -> None:
         try:
             pd.read_csv(cls.CSV_FILE)
         except FileNotFoundError:
@@ -20,7 +21,9 @@ class CSV:
             df.to_csv(cls.CSV_FILE, index=False)
 
     @classmethod
-    def add_entry(cls, date, amount, category, description):
+    def add_entry(
+        cls, date: str, amount: float, category: str, description: str
+    ) -> None:
         new_entry = {
             "date": date,
             "amount": amount,
@@ -36,7 +39,7 @@ class CSV:
             print(f"Failed to add entry: {e}")
 
     @classmethod
-    def get_transactions(cls, start_date, end_date):
+    def get_transactions(cls, start_date: str, end_date: str) -> DataFrame:
         try:
             df = pd.read_csv(cls.CSV_FILE)
             df["date"] = pd.to_datetime(df["date"], format=CSV.FORMAT)
@@ -83,7 +86,7 @@ class CSV:
             return pd.DataFrame()
 
 
-def add():
+def add() -> None:
     CSV.initialize_csv()
     try:
         date = get_date(
@@ -98,7 +101,7 @@ def add():
         print(f"An error occurred while adding transaction: {e}")
 
 
-def plot_transactions(df):
+def plot_transactions(df: DataFrame) -> None:
     try:
         df["date"] = pd.to_datetime(df["date"])
         df = df.set_index("date")
@@ -129,7 +132,7 @@ def plot_transactions(df):
         print(f"Failed to plot transactions: {e}")
 
 
-def main():
+def main() -> None:
     while True:
         print("\n1. Add a new transaction")
         print("2. View transactions and summary within a date range")

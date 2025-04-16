@@ -4,7 +4,7 @@ date_format = "%d-%m-%Y"
 CATEGORIES = {"I": "Income", "E": "Expense"}
 
 
-def get_date(prompt, allow_default=False):
+def get_date(prompt: str, allow_default: bool = False) -> str:
     while True:
         date_str = input(prompt)
         if allow_default and not date_str:
@@ -16,7 +16,7 @@ def get_date(prompt, allow_default=False):
             print("Invalid date format. Please enter the date in dd-mm-yyyy format")
 
 
-def get_amount():
+def get_amount() -> float:
     while True:
         try:
             amount = float(input("Enter the amount: "))
@@ -27,7 +27,7 @@ def get_amount():
             print(e)
 
 
-def get_category():
+def get_category() -> str:
     while True:
         category = input(
             "Enter the category ('I' for Income or 'E' for Expense): "
@@ -37,5 +37,5 @@ def get_category():
         print("Invalid category. Please enter 'I' for Income or 'E' for Expense.")
 
 
-def get_description():
+def get_description() -> str:
     return input("Enter a description (optional): ")
